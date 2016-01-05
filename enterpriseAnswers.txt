@@ -1,0 +1,41 @@
+q_install=y
+
+q_vendor_packages_install=y
+
+q_puppetmaster_install=y
+
+q_all_in_one_install=y
+
+q_puppetagent_install=y
+
+
+
+####################################################################
+#                                                                  #
+#                  change these to new hostname                    #
+#                                                                  #
+####################################################################
+#                                                                  #
+q_puppetagent_certname=hmaster.netbuilder.private
+
+q_puppetmaster_certname=hmaster.netbuilder.private
+
+q_puppetmaster_dnsaltnames=hmaster,hmaster.netbuilder.private,puppet
+
+#                                                                  #
+####################################################################
+
+
+q_pe_check_for_updates=y
+
+q_puppet_enterpriseconsole_httpd_port=443
+
+q_puppet_enterpriseconsole_auth_password=netbuilder
+
+q_database_install=y
+
+q_puppetdb_database_name=puppetdb
+
+q_puppetdb_database_password=netbuilder
+
+q_puppetdb_database_user=puppetdb
