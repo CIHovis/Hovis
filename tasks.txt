@@ -1,0 +1,44 @@
+ Hovis 
+
+
+
+	Our Setup for issue tracking
+
+ Jira
+ Git Online
+
+ 
+ 
+	CentOS Modules (GUI)
+
+ Eclipse         (Forge, look for best one for plugins)
+ Eclipse Plugins [Git, Java, ANT if available]
+ Java
+ Git
+ ANT
+ 
+ 
+
+	Ubuntu Modules 
+			
+CI Server
+  Java
+  Git
+  ANT            (maven alternative)
+  Travis CI      (jenkins alternative)
+WebServer
+  MySQL    		 (database tool for web)
+  Tomcat 		 (webserver)
+  PHP 			 (for web-DB integration)
+Deploying Built Code
+  Artifactory 	 (Nexus Alternative)
+  
+  
+Configuration
+
+Puppet Enterprise Master
+Agent1:		CI Server
+Agent2:		WebServer
+Agent3:		Deployment
+Agent4: 	Test Environment
+CentGUI:	Developmer Environment
