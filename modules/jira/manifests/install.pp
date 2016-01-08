@@ -12,25 +12,22 @@ class jira::install{
 
   #download the file
   exec { 'wget_jira':
-    user    => root,
     cwd     => '/opt/',
-    command => 'wget http://192.168.1.6:8080/downloads/atlassian-jira-6.4.9-x64.bin',
+    command => 'sudo wget http://192.168.1.6:8080/downloads/atlassian-jira-6.4.9-x64.bin',
     before  => Exec['chmod_jira'],
     timeout => 0,
+	creates => '/opt/atlassian-jira-6.4.9-x64.bin',
   }
 
 
- exec { 'chmod_jira':
-   user    => root,
-   cwd     => '/opt/',
-   command => 'chmod a+x jira.bin',
-   before  => Exec['ran'],
+ file { '/opt/atlassian-jira-6.4.9-x64.bin':
+   mode    => '0775'
+   before  => Exec['startjira'],
  }
 
-  exec { 'ran':
-    user    => root,
+  exec { 'startjira':
     cwd     => '/opt/',
-    command => 'printf "\no\n2\n\n\n2\n8085\n8007\ny\n" | ./jira.bin',
+    command => 'printf "yn\on\1n\2n\8082n\8006n\in" | ./atlassian-jira-6.4.9-x64.bin',
   }
 }
 
